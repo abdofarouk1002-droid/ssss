@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        color: #f5f1f1;
+    }
+    img {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 254, 254);
+    padding: 0 20px;
+    object-fit: cover;
+    height: 500px;
+    width: 100%;
+    }
+    /* استيراد خط عربي فاخر ونظيف */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background-color: #ffffff; /* خلفية صفحة بيضاء صافية وفاخرة */
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+/* شريط التنقل الفاخر */
+ 
+    
+
+.btn-primary {
+    background-color: #111827;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* حاوية صفحة التفاصيل */
+.property-page-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* صندوق الصورة (عريض، حواف انسيابية، بدون أي حدود حادة) */
+.property-image-box {
+    width: 100%;
+    height: 420px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.property-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* تخطيط المحتوى (بدون مربعات بيضاء، الاعتماد على المساحات) */
+.property-content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px; /* مسافة فخمة وواسعة بين القسمين */
+    align-items: start;
+}
+
+/* القسم الأيمن: العنوان والوصف */
+.main-info h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #eaedf1;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.location-tag {
+    color: #6b7280;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* إزالة المربعات البيضاء واستبدالها بنص منساب يفصله خطوط ناعمة جداً */
+.description-box, 
+.features-box {
+    background: transparent; /* بدون خلفية بيضاء */
+    padding: 0;
+    border: none;
+    margin-bottom: 35px;
+}
+
+.description-box h3, 
+.features-box h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ebedf1;
+    margin-bottom: 15px;
+}
+
+.description-box p {
+    color: #f0f3f7;
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+/* شبكة المميزات (شكل نظيف بدون خلفيات كروت) */
+.features-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.features-grid li {
+    background: #c2ac8f; /* رمادي خفيف جداً وهادئ يريح العين */
+    padding: 14px 18px;
+    border-radius: 8px;
+    color: #f7faff;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* كارت السعر والجانب الأيسر (تصميم نظيف ومستقل ببرواز خفيف جداً) */
+.sidebar-card {
+    background:  #c2ac8f;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    position: sticky;
+    top: 30px;
+}
+
+.price-tag {
+    font-size: 28px;
+    color: #ffffff; /* أخضر هادئ وراقي */
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f3f4f6;
+    text-align: center;
+}
+
+.specs-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.specs-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f9fafb;
+    color: #6b7280;
+    font-size: 15px;
+}
+
+.specs-list li strong {
+    color: #111827;
+    font-weight: 500;
+}
+
+.btn-contact {
+    display: block;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.btn-contact:hover {
+    background-color: #1f2937;
+}
+
+/* التجاوب مع الموبايل */
+@media (max-width: 768px) {
+    .property-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .property-image-box {
+        height: 260px;
+    }
+}
+    
+</style>
+<body>
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل العقار - منصة عقاراتي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <header class="navbar">
+        <div class="logo">عقاراتي 🏢</div>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#properties">العقارات</a>
+            <a href="#">من نحن</a>
+            <a href="#">اتصل بنا</a>
+        </nav>
+        <a href="index.html" class="btn-primary">العودة للرئيسية</a>
+    </header>
+
+    <!-- محتوى صفحة التفاصيل -->
+    <main class="property-page-container">
+        
+        <!-- صورة العقار (بعرض مناسب وغير مطولو) -->
+        <div class="property-image-box">
+           <img src="https://settlecreate.com/wp-content/uploads/2019/04/Zain-interior-Face-lift.jpg" alt="شقة فاخرة في المعادي">
+        </div>
+
+        <!-- تفاصيل ووصف العقار -->
+        <div class="property-content-wrapper">
+            
+            <!-- القسم الأيمن: العنوان والوصف -->
+            <div class="main-info">
+                <h1>شقة فاخرة للبيع في قلب المعادي</h1>
+                <p class="location-tag">📍 المعادي، القاهرة</p>
+                
+                <div class="description-box">
+                    <h3>نبذة عن العقار</h3>
+                    <p>
+                        فرصة ممتازة للسكن الراقي! شقة بمساحة <strong>150 متر مربع</strong> في موقع حيوي وهادئ بالمعادي. تمتاز بتصميم عصري وتقسيم ذكي يضمن الاستغلال الأمثل للمساحات مع إضاءة وتهوية ممتازة طوال اليوم.
+                    </p>
+                </div>
+
+                <div class="features-box">
+                    <h3>مميزات العقار</h3>
+                    <ul class="features-grid">
+                        <li>✓ مصعد كهربائي حديث</li>
+                        <li>✓ أمن وحراسة 24 ساعة</li>
+                        <li>✓ تراس بإطلالة متميزة</li>
+                        <li>✓ قريبة من جميع الخدمات والمواصلات</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- القسم الأيسر: كارت السعر والتواصل -->
+            <div class="sidebar-card">
+                <div class="price-tag">1,500,000 جنيه</div>
+                
+                <ul class="specs-list">
+                    <li><span>المساحة:</span> <strong>150 م²</strong></li>
+                    <li><span>الغرف:</span> <strong>3 غرف</strong></li>
+                    <li><span>الحمامات:</span> <strong>2 حمام</strong></li>
+                    <li><span>التشطيب:</span> <strong>سوبر لوكس</strong></li>
+                </ul>
+
+                <a href="#" class="btn-contact">تواصل مع المعلن</a>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
+
+ 
+</body>
+</html>

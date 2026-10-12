@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color:  #c2ac8f;;
+    color: #f3efef;
+}
+
+/* النافبار */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color:  #c2ac8f;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f6fbff;
+}
+
+.navbar nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #f8f4f4;
+    font-weight: 500;
+}
+
+.navbar nav a:hover {
+    color: #3498db;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* قسم البطل */
+.hero {
+    background: linear-gradient(rgba(248, 245, 245, 0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 254, 254);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.search-box {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* قسم العقارات */
+.properties {
+    padding: 50px 5%;
+}
+
+.properties h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.property-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.property-info {
+    padding: 20px;
+}
+
+.property-info h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+.price {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.details {
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+p.details1, p.details2, p.details3, p.details4 {
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn-details {
+    display: inline-block;
+    background-color: #2c3e50;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+ @media (max-width: 768px) {
+        .property-content-wrapper {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .property-image-box {
+            height: 260px;
+        }
+    }    

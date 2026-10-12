@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فيلا مستقلة بـ التجمع - عقاراتي</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: #c2ac8f; /* خلفية بيضاء صافية وفاخرة */
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* شريط التنقل العلوي */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 8%;
+            background-color: #c2ac8f;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f7f8f8;
+        }
+
+        .navbar nav a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #f6f7fa;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 8px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* حاوية الصفحة */
+        .property-page-container {
+            max-width: 1050px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        /* صندوق الصورة الرئيسي */
+        .property-image-box {
+            width: 100%;
+            height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .property-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* تقسيم الصفحة لعمودين */
+        .property-content-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* القسم الأيمن: العنوان والوصف */
+        .main-info h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #edeff3;
+            margin-bottom: 6px;
+        }
+
+        .location-tag {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .description-box, 
+        .features-box {
+            margin-bottom: 30px;
+        }
+
+        .description-box h3, 
+        .features-box h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #e8eaf0;
+            margin-bottom: 12px;
+        }
+
+        .description-box p {
+            color: #f7f8fa;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* شبكة المميزات */
+        .features-grid {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .features-grid li {
+            color: #f4f5f7;
+            font-size: 14px;
+        }
+
+        /* الكارت الجانبي الأيسر */
+        .sidebar-card {
+            background: #c2ac8f; /* خلفية بيضاء صافية وفاخرة */
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 20px;
+        }
+
+        .price-tag {
+            font-size: 24px;
+            color: #f8f4f4;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: right;
+        }
+
+        .specs-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .specs-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f8fafc;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .specs-list li strong {
+            color: #0f172a;
+            font-weight: 500;
+        }
+
+        .btn-contact {
+            display: block;
+            width: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: background 0.2s;
+        }
+
+        .btn-contact:hover {
+            background-color: #1e293b;
+        }
+
+        /* التجاوب مع شاشات الموبايل */
+        @media (max-width: 768px) {
+            .property-content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .property-image-box {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <header class="navbar">
+        <div class="logo">عقاراتي 🏢</div>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#properties">العقارات</a>
+            <a href="#">من نحن</a>
+            <a href="#">اتصل بنا</a>
+        </nav>
+        <a href="index.html" class="btn-primary">العودة للرئيسية</a>
+    </header>
+
+    <!-- محتوى الصفحة -->
+    <main class="property-page-container">
+        
+        <!-- صورة العقار -->
+        <div class="property-image-box">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="فيلا مستقلة بـ التجمع">
+        </div>
+
+        <!-- تفاصيل المحتوى -->
+        <div class="property-content-wrapper">
+            
+            <!-- القسم الأيمن: العنوان والوصف -->
+            <div class="main-info">
+                <h1>فيلا مستقلة بـ التجمع</h1>
+                <p class="location-tag">📍 التجمع، القاهرة الجديدة</p>
+                
+                <div class="description-box">
+                    <h3>نبذة عن العقار</h3>
+                    <p>
+                        فرصة ممتازة للسكن الراقي! فيلا مستقلة بمساحة <strong>350 متر مربع</strong> فرصة استثمارية للتصميم المعماري الفريد على الطراز الكلاسيكي الراقي، تقع في أفضل وأهدى أحياء التجمع. تتميز الفيلا بواجهة مميزة ذات شرفة واسعة تطل على مساحات خضراء، وتستمتع بتهوية وإضاءة طبيعية ممتازة طوال اليوم. الفيلا مصممة لاستغلال كافة المساحات بذكاء، مما يوفر بيئة سكنية مريحة وعصرية للعائلات التي تبحث عن الفخامة والراحة.
+                    </p>
+                </div>
+
+                <div class="features-box">
+                    <h3>مميزات العقار</h3>
+                    <ul class="features-grid">
+                        <li>✓ فيلا مستقلة بمدخل خاص للخصوصية التامة</li>
+                        <li>✓ ريسبشن كبير يتسع لأكثر من صالون ومطبخ واسع</li>
+                        <li>✓ منطقة آمنة ومزودة بجميع الخدمات الأساسية والترفيهية</li>
+                        <li>✓ قريبة جداً من المحاور الرئيسية، المدارس الدولية، والمراكز التجارية في التجمع</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- القسم الأيسر: كارت السعر والمواصفات -->
+            <div class="sidebar-card">
+                <div class="price-tag">5,200,000 جنيه</div>
+                
+                <ul class="specs-list">
+                    <li><span>المساحة:</span> <strong>350 متر مربع</strong></li>
+                    <li><span>الغرف:</span> <strong>5 غرف نوم واسعة</strong></li>
+                    <li><span>الحمامات:</span> <strong>4 حمامات</strong></li>
+                    <li><span>التشطيب:</span> <strong>سوبر لوكس</strong></li>
+                </ul>
+
+                <a href="#" class="btn-contact">تواصل مع المعلن</a>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
